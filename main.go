@@ -96,8 +96,8 @@ func wrapUserMentionsWithXTags(text string) string {
 }
 
 func removeXTags(text string) string {
-	text = strings.ReplaceAll(text, "<x>", "")
-	return strings.ReplaceAll(text, "</x>", "")
+	text = strings.ReplaceAll(text, "<x>", " <")
+	return strings.ReplaceAll(text, "</x>", " ")
 }
 
 func main() {
