@@ -45,7 +45,7 @@ func translateText(ctx context.Context, text string, targetLang string) (string,
 	reqBody, err := json.Marshal(map[string]interface{}{
 		"text":        []string{text},
 		"target_lang": targetLang,
-		"ignore_tags": []string{},
+		"ignore_tags": []string{"x"},
 	})
 	if err != nil {
 		return "", err
