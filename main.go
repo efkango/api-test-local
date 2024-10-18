@@ -43,9 +43,10 @@ func translateText(ctx context.Context, text string, targetLang string) (string,
 	text = wrapUserMentionsWithXTags(text)
 
 	reqBody, err := json.Marshal(map[string]interface{}{
-		"text":        []string{text},
-		"target_lang": targetLang,
-		"ignore_tags": []string{"x"},
+		"text":         []string{text},
+		"target_lang":  targetLang,
+		"ignore_tags":  []string{"x"},
+		"tag_handling": "xml",
 	})
 	if err != nil {
 		return "", err
