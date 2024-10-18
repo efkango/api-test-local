@@ -59,6 +59,7 @@ func translateText(ctx context.Context, text string, targetLang string) (string,
 	req.Header.Set("Authorization", "DeepL-Auth-Key "+apiKey)
 	req.Header.Set("Content-Type", "application/json")
 
+	client := &http.Client{}
 	resp, err := client.Do(req)
 	if err != nil {
 		return "", err
